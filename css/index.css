@@ -51,7 +51,7 @@ header {
 
 .project {
     flex: 0 0 calc(50% - 20px);
-    background-color: #eccbcb;
+    background-color: #FFF;
     margin-bottom: 20px;
     border-radius: 10px;
     overflow: hidden;
