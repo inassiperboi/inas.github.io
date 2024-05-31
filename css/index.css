@@ -40,7 +40,7 @@ header {
 }
 
 .project {
-    flex: 0 0 30%;
+    flex: 0 0 calc(50% - 20px);
     background-color: #fff;
     margin-bottom: 20px;
     border-radius: 10px;
