@@ -8,28 +8,38 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #FFF;
     color: #333;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #FFF;
+    color: #333;
     padding: 20px;
     text-align: center;
 }
 
 .profile {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
     margin-top: 20px;
+    text-align: left;
+    justify-content: center;
 }
 
 .profile-photo img {
-    width: 200px;
-    border-radius: 50%;
+    width: 150px;
+    border-radius: 5%;
     margin-right: 20px;
+}
+
+.profile-data h2 {
+    color: #333; /* Warna font hitam */
+}
+
+.profile-data p {
+    color: #333; /* Warna font hitam */
 }
 
 .projects {
@@ -41,7 +51,7 @@ header {
 
 .project {
     flex: 0 0 calc(50% - 20px);
-    background-color: #fff;
+    background-color: #eccbcb;
     margin-bottom: 20px;
     border-radius: 10px;
     overflow: hidden;
@@ -55,6 +65,8 @@ header {
 
 .project-description {
     padding: 20px;
+    
+    color: #333; /* Warna font hitam */
 }
 
 .skills {
@@ -62,14 +74,61 @@ header {
     margin-top: 20px;
 }
 
+.skill-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .skill-icons img {
     width: 50px;
-    margin: 0 10px;
+    margin: 10px;
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #FFF;
+    color: #333;
     padding: 20px;
     text-align: center;
+}
+.project:hover {
+    transform: scale(1.05); /* Memperbesar kotak saat dihover */
+    transition: transform 0.3s ease; /* Animasi perubahan */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan saat dihover */
+}
+
+
+
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .project {
+        flex: 0 0 calc(100% - 40px);
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-photo img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-photo img {
+        width: 120px;
+    }
+
+    .project-description {
+        padding: 15px;
+    }
+
+    .skill-icons img {
+        width: 40px;
+    }
 }
