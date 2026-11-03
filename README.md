@@ -1,43 +1,30 @@
-# 🎀 Seberapa Kenal Kamu Sama Inas? (Quiz Web App) 🌸
+# 🐱 Happy 3rd Anniversary, Inasku Sayang! 💖
 
-Aplikasi web kuis interaktif bertema pastel pink & kuning (*kawaii / cute aesthetic*) untuk menguji seberapa kenal seseorang dengan **Inas**.
-
----
-
-### ✨ Fitur Utama:
-1. **Tema Pastel Cantik (Pink & Yellow)**:
-   - Gradien lembut pastel pink dan kuning mentega.
-   - Elemen mengapung (*floating background*) bintang, bunga sakura, pita, awan, dan hati.
-   - Font bulat ramah (`Fredoka` & `Quicksand`).
-2. **Interaktivitas & Efek Suara**:
-   - Efek suara sintetis ceria Web Audio API (tanpa perlu unduh file MP3 eksternal).
-   - Tombol toggle suara (On/Off).
-   - Animasi confetti warna-warni saat menjawab benar dan saat menyelesaikan kuis.
-3. **Notifikasi Langsung Tiap Soal**:
-   - **Benar:** Notifikasi ceria `"Yey kamu benaaar! ✨"` + Konfeti 🎉.
-   - **Salah:** Notifikasi sedih beremotikon `"Huhuhu kamu salah 💔"` (🥺) + menunjukkan jawaban yang benar.
-4. **10 Pertanyaan Lengkap Sesuai Permintaan**:
-   - Warna favorit: `pink`
-   - Makanan pilihan: `lontong kupang`
-   - Minuman pilihan: `es teh jasmine`
-   - Jajanan pilihan: `onion ring`
-   - Kegiatan pilihan: `santai dirumah sambil ngemil2`
-   - Tinggi badan: `155cm`
-   - Berat badan: `61kg`
-   - Gak bisa tidur kalau gak ada: `guling`
-   - Yang paling ditakuti: `cicak`
-   - Yang akan dikoleksi: `skin and bodycare`
-5. **Penilaian & Pesan Akhir**:
-   - Jika skor **di bawah 8 (< 8)**: Menampilkan pesan lucu: *"Kamu harus sering deh ngobrol sama Inas wkwkwk! 😜💬"*
-   - Jika skor **8 - 9**: *"Wahh mantap! Kamu beneran perhatiin Inas! 💕"*
-   - Jika skor **10/10**: *"GILA KEREN PARAH! Kamu cenayang apa soulmate Inas nih?! 💯✨"*
-6. **Fitur Ekstra**:
-   - Review jawaban lengkap (10 soal) yang bisa dibuka-tutup.
-   - Tombol kirim skor langsung ke WhatsApp.
-   - Tombol salin hasil ke clipboard.
-   - Tombol coba lagi dari awal.
+Website interaktif romantis bernuansa pastel pink & vanila dengan amplop surat cinta 3D, galeri foto polaroid kenangan manis, animasi kucing lucu (*kawaii cat companions*), dan efek suara ambient chords cinta.
 
 ---
 
-### 🚀 Cara Menjalankan:
-Cukup klik ganda (double click) file **`index.html`** di browser apa pun (Google Chrome, Edge, Safari, Firefox), atau buka lewat VS Code Live Server / ekstensi web server lokal.
+### 💌 Fitur Utama:
+1. **Surat Cinta Interaktif (Interactive Envelope 3D)**:
+   - Amplop bersegel lilin cinta (*wax seal*) dengan animasi kucing ngintip di atasnya: *"Ada surat cinta spesial buat Inas!"*.
+   - Saat diklik: Segel terbuka, tutup amplop melipat ke atas, konfeti cinta berhamburan, dan isi surat cinta keluar dengan transisi lembut ke layar penuh.
+2. **Hitungan 3 Tahun Penuh Cinta (13 November 2026)**:
+   - Kartu statistik 3 Tahun, 36 Bulan, 1.096+ Hari, $\infty$ Sayang & Cinta.
+   - Kata-kata romantis menyentuh yang ditulis khusus untuk Inas.
+3. **Galeri Foto Polaroid Pop-Out (Menggunakan Foto di folder `img/`)**:
+   - 5 Foto kenangan terindah ditata ala polaroid miring dengan selotip washi tape imut.
+   - Setiap foto dapat diklik untuk memperbesar (*pop-out modal*) dengan cerita kenangan manis dan pesan rahasia di baliknya.
+4. **Pojok Kucing & Ungkapan Cinta Interaktif**:
+   - Tombol **"Pencet Kalau Kangen Inas! 💌"**: Menampilkan ungkapan sayang dan pujian manis acak untuk Inas.
+   - Tombol **"Peluk Virtual & Meow Kucing! 🐾"**: Suara kucing mengeong lucu (*audio synthesized*) & hujan pelukan virtual.
+   - Tombol **"Hujan Love & Bintang! 🎆"**: Ledakan kembang api konfeti hati warna-warni.
+   - Tombol **"Kirim Pesan Mesra ke WhatsApp 📲"**: Teks anniversary romantis siap kirim.
+5. **Efek Suara & Musik Cinta (Web Audio API)**:
+   - Melodi lofi/kalimba romantis lembut di latar belakang yang bisa di-toggle on/off.
+   - Efek klik memunculkan hati dan jejak kaki kucing (*cat paws*) mengambang di layar.
+
+---
+
+### 🌐 Akses Langsung:
+Buka file **`index.html`** di browser apa pun atau kunjungi GitHub Pages:
+👉 **https://inassiperboi.github.io**
