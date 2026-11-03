@@ -1,95 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inas's Portofolio</title>
-    <link rel="stylesheet" href="css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seberapa Kenal Kamu Sama Inas? 🎀</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <h1>Inas's Portofolio</h1>
-    </header>
-    
-    <section class="profile">
-        <div class="profile-photo">
-            <img src="img/profile-photo.jpeg" alt="Profile Photo">
+<body class="min-h-screen flex items-center justify-center p-4 relative overflow-x-hidden">
+
+  <!-- Floating Background Elements -->
+  <div class="floating-bg" id="floatingBg">
+    <span class="float-item text-3xl" style="top: 10%; left: 8%;">🌸</span>
+    <span class="float-item text-2xl" style="top: 22%; right: 12%;">⭐</span>
+    <span class="float-item text-4xl" style="top: 45%; left: 5%;">✨</span>
+    <span class="float-item text-2xl" style="top: 70%; right: 8%;">🎀</span>
+    <span class="float-item text-3xl" style="top: 85%; left: 15%;">💖</span>
+    <span class="float-item text-2xl" style="top: 15%; left: 80%;">🐥</span>
+    <span class="float-item text-3xl" style="top: 60%; left: 85%;">🌼</span>
+    <span class="float-item text-2xl" style="top: 35%; right: 30%;">🍓</span>
+    <span class="float-item text-3xl" style="top: 80%; right: 35%;">☁️</span>
+  </div>
+
+  <!-- Sound Toggle Button -->
+  <button id="soundToggle" class="fixed top-4 right-4 z-50 bg-white/80 backdrop-blur-md px-3.5 py-2 rounded-full shadow-md border border-pink-200 text-sm font-semibold flex items-center gap-1.5 hover:scale-105 active:scale-95 transition-all text-pink-700">
+    <span id="soundIcon">🔊</span>
+    <span id="soundText" class="hidden sm:inline">Suara: On</span>
+  </button>
+
+  <!-- Main Container Card -->
+  <main class="w-full max-w-lg bg-white/90 backdrop-blur-xl rounded-[2.5rem] shadow-2xl p-6 sm:p-8 border-4 border-white/80 relative z-10 my-4">
+
+    <!-- Screen 1: Welcome / Start Screen -->
+    <section id="startScreen" class="text-center py-4 space-y-6">
+      <div class="relative inline-block">
+        <div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto bg-gradient-to-tr from-pink-300 via-pink-200 to-yellow-200 rounded-full flex items-center justify-center text-5xl shadow-lg border-4 border-white animate-bounce-gentle">
+          🎀
         </div>
-        <div class="profile-data">
-            <h2>Inas Najah Zhahirah</h2>
-            <p>Mahasiswa D4 Teknik Informatika Universitas Airlangga</p>
+        <span class="absolute -bottom-1 -right-1 bg-yellow-300 text-yellow-900 text-xs px-2.5 py-0.5 rounded-full font-bold shadow-sm border border-white">
+          Inas Edition ✨
+        </span>
+      </div>
+
+      <div class="space-y-2">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-pink-600 tracking-tight font-fredoka">
+          Seberapa Kenal Kamu<br>
+          <span class="text-amber-500 underline decoration-pink-300 decoration-wavy">Sama Inas?</span> 💕
+        </h1>
+        <p class="text-gray-600 text-sm sm:text-base font-medium px-2">
+          Uji seberapa peka dan perhatian kamu sama Inas! Ada 10 pertanyaan seru, yuk buktikan kalau kamu emang beneran kenal! 🥰
+        </p>
+      </div>
+
+      <!-- Player Name Input -->
+      <div class="bg-pink-50/70 p-4 rounded-2xl border-2 border-dashed border-pink-200 text-left space-y-2">
+        <label for="playerNameInput" class="block text-xs sm:text-sm font-bold text-pink-700">
+          Tulis nama atau panggilan kamu dulu yuk:
+        </label>
+        <div class="relative">
+          <input type="text" id="playerNameInput" placeholder="Contoh: Teman Baik / Ayang / Bestie..." maxlength="25"
+            class="w-full px-4 py-3 rounded-xl bg-white border-2 border-pink-200 text-gray-700 font-semibold focus:outline-none focus:border-pink-400 focus:ring-2 focus:ring-pink-200 text-sm transition-all placeholder:text-gray-400">
+          <span class="absolute right-3 top-3 text-lg">✏️</span>
         </div>
+      </div>
+
+      <!-- Info Badges -->
+      <div class="grid grid-cols-2 gap-2 text-xs font-semibold text-gray-600">
+        <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-2.5 flex items-center justify-center gap-1.5">
+          <span>🎯</span> 10 Pertanyaan
+        </div>
+        <div class="bg-pink-50 border border-pink-200 rounded-xl p-2.5 flex items-center justify-center gap-1.5">
+          <span>⚡</span> Langsung Tau Hasil
+        </div>
+      </div>
+
+      <!-- Start Button -->
+      <button id="startBtn" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-pink-400 via-pink-500 to-amber-400 hover:from-pink-500 hover:to-amber-500 text-white font-bold text-lg shadow-lg shadow-pink-300/50 hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 group font-fredoka">
+        <span>Mulai Kuis Sekarang!</span>
+        <span class="text-xl group-hover:translate-x-1 transition-transform">🚀</span>
+      </button>
     </section>
 
-    <section class="projects">
-        <div class="project">
-            <div class="project-image">
-                <img src="img/project1.png" alt="Project 1">
-            </div>
-            <div class="project-description">
-                <h3>This is July</h3>
-                <p>This is July, toko online fashion wanita yang menyajikan tren fashion terkini. Platform belanja online yang dibangun menggunakan bahasa pemrograman Laravel dan didukung oleh database MySQL.</p>
-            </div>
+    <!-- Screen 2: Quiz Question Screen -->
+    <section id="quizScreen" class="hidden space-y-5">
+      <!-- Top Bar: Progress & Counter -->
+      <div class="space-y-2">
+        <div class="flex items-center justify-between text-xs sm:text-sm font-bold">
+          <span class="text-pink-600 bg-pink-100/80 px-3 py-1 rounded-full border border-pink-200 flex items-center gap-1">
+            <span id="currentQNumberBadge">1</span> dari 10 Pertanyaan
+          </span>
+          <span id="liveScoreBadge" class="text-amber-700 bg-yellow-100/80 px-3 py-1 rounded-full border border-yellow-200 flex items-center gap-1 font-semibold">
+            ⭐ Benar: <strong id="currentCorrectCount">0</strong>
+          </span>
         </div>
 
-        <div class="project">
-            <div class="project-image">
-                <img src="img/project2.png" alt="Project 2">
-            </div>
-            <div class="project-description">
-                <h3>JokiinazaWeb</h3>
-                <p>Situs web pemesanan joki tugas dan forum diskusi dengan platform WordPress.</p>
-            </div>
+        <!-- Animated Progress Bar -->
+        <div class="w-full h-3.5 bg-pink-100 rounded-full overflow-hidden p-0.5 border border-pink-200">
+          <div id="progressBar" class="h-full bg-gradient-to-r from-pink-400 via-pink-500 to-yellow-400 rounded-full transition-all duration-500 w-[10%]"></div>
         </div>
+      </div>
 
-        <div class="project">
-            <div class="project-image">
-                <img src="img/project3.png" alt="Project 3">
-            </div>
-            <div class="project-description">
-                <h3>Carenest</h3>
-                <p>Platform pencatatan digital berbasis HTML,CSS, dan JavaScript yang memfasilitasi pengelolaan data posyandu secara efisien dan terstruktur.</p>
-            </div>
+      <!-- Question Card -->
+      <div class="bg-gradient-to-b from-pink-50/80 to-yellow-50/50 rounded-2xl p-5 border-2 border-pink-200/80 shadow-sm space-y-3">
+        <div class="flex items-center gap-2">
+          <span class="bg-pink-400 text-white text-xs font-bold px-2.5 py-1 rounded-lg font-fredoka shadow-sm" id="questionCategory">
+            Tebak Inas 🌸
+          </span>
+          <span class="text-xs text-gray-500 font-medium" id="questionHint">Pilih 1 jawaban yang paling pas!</span>
         </div>
-        <div class="project">
-            <div class="project-image">
-                <img src="img/project4.png" alt="Project 4">
-            </div>
-            <div class="project-description">
-                <h3>Dobujack Indonesia</h3>
-                <p>Platform toko online fashion pria yang menggunakan Bootstrap.</p>
-            </div>
-        </div>
-        <div class="project">
-            <div class="project-image">
-                <img src="img/project5.png" alt="Project 4">
-            </div>
-            <div class="project-description">
-                <h3>Hidden Game</h3>
-                <p>Sebuah proyek berbasis web menggunakan Flask (Python) yang memungkinkan pelanggan untuk memberikan umpan balik tentang pengalaman berbelanja dan penyimpanan data menggunakan Datalog.</p>
-            </div>
-        </div>        
+        <h2 id="questionText" class="text-lg sm:text-xl font-bold text-gray-800 leading-snug font-fredoka min-h-[56px] flex items-center">
+          Loading pertanyaan...
+        </h2>
+      </div>
+
+      <!-- Options Container -->
+      <div id="optionsContainer" class="space-y-3">
+        <!-- Rendered dynamically -->
+      </div>
     </section>
 
-    <section class="skills">
-        <h2>I'am a Beginner</h2>
-        <div class="skill-icons">
-            <img src="img/php.png" alt="PHP">
-            <img src="img/java.png" alt="Java">
-            <img src="img/html.jpg" alt="HTML">
-            <img src="img/css.png" alt="CSS">
-            <img src="img/python.png" alt="Python">
-            <img src="img/js.png" alt="Js">
+    <!-- Screen 3: Final Result Screen -->
+    <section id="resultScreen" class="hidden text-center py-2 space-y-6">
+      <!-- Cute Icon Reaction -->
+      <div class="relative inline-block">
+        <div id="resultReactionIcon" class="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-full flex items-center justify-center text-5xl sm:text-6xl shadow-xl border-4 border-white animate-bounce-gentle">
+          🎉
         </div>
+        <span id="resultRankPill" class="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider shadow border border-white">
+          Status
+        </span>
+      </div>
+
+      <!-- Title & Greeting -->
+      <div class="space-y-1.5">
+        <p class="text-xs sm:text-sm font-bold text-pink-500 tracking-wide" id="resultPlayerGreeting">
+          Hasil Kuis Buat Kamu
+        </p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-800 font-fredoka" id="resultHeadline">
+          Skor Akhir Kamu
+        </h2>
+      </div>
+
+      <!-- Score Card -->
+      <div class="bg-gradient-to-tr from-pink-100 via-yellow-100 to-pink-50 p-6 rounded-3xl border-2 border-pink-200 shadow-inner space-y-3">
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-5xl sm:text-6xl font-black text-pink-600 font-fredoka" id="finalScoreNumber">0</span>
+          <span class="text-2xl font-bold text-gray-400">/ 10</span>
+        </div>
+        <div class="w-full bg-white/70 h-2.5 rounded-full overflow-hidden">
+          <div id="finalScoreBar" class="h-full bg-gradient-to-r from-pink-400 to-yellow-400 rounded-full transition-all duration-1000 w-0"></div>
+        </div>
+        <p id="resultPercentage" class="text-xs font-bold text-pink-700">Akurasi: 0%</p>
+      </div>
+
+      <!-- Custom Funny Message based on score -->
+      <div id="resultMessageCard" class="p-4 sm:p-5 rounded-2xl border-2 text-sm sm:text-base font-semibold leading-relaxed shadow-sm">
+        <!-- Injected via JS -->
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="space-y-2.5 pt-2">
+        <button id="shareWaBtn" class="w-full py-3.5 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 font-fredoka">
+          <span>📲 Bagikan Hasil ke Inas (WhatsApp)</span>
+        </button>
+
+        <button id="copySummaryBtn" class="w-full py-3 px-4 rounded-2xl bg-yellow-100 hover:bg-yellow-200 text-yellow-900 font-bold text-sm border border-yellow-300 transition-all flex items-center justify-center gap-1.5 font-fredoka">
+          <span id="copyIcon">📋</span>
+          <span id="copyText">Salin Teks Hasil</span>
+        </button>
+
+        <button id="restartBtn" class="w-full py-3 px-4 rounded-2xl bg-pink-100 hover:bg-pink-200 text-pink-700 font-bold text-sm border border-pink-300 transition-all flex items-center justify-center gap-1.5 font-fredoka">
+          <span>🔄 Mau Coba Lagi Dari Awal</span>
+        </button>
+      </div>
+
+      <!-- Collapsible Review Answers -->
+      <div class="text-left pt-2">
+        <button id="toggleReviewBtn" class="w-full py-2.5 px-4 bg-gray-50 hover:bg-gray-100 text-gray-600 font-bold text-xs rounded-xl border border-gray-200 flex items-center justify-between transition-colors">
+          <span>🔍 Lihat Kunci Jawaban Lengkap (10 Soal)</span>
+          <span id="reviewArrow">▼</span>
+        </button>
+        <div id="reviewContainer" class="hidden mt-3 space-y-2 max-h-64 overflow-y-auto pr-1 text-xs">
+          <!-- Filled dynamically -->
+        </div>
+      </div>
     </section>
 
-    <footer>
-        <h2>Contact: </h2>
-        <div class="contact-info">
-            <a href="https://wa.me/62895805315185" target="_blank">WhatsApp</a>
-            <a href="https://instagram.com/inas.nais" target="_blank">Instagram</a>
-            <a href="https://github.com/inassiperboi" target="_blank">GitHub</a>
-        </div>
-    </footer>
+  </main>
+
+  <!-- Sweet Modal: Instant Feedback (Benar / Salah) -->
+  <div id="feedbackModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+    <div id="feedbackCard" class="w-full max-w-sm bg-white rounded-3xl p-6 sm:p-7 text-center shadow-2xl border-4 transform scale-90 transition-all duration-300 space-y-4">
+      
+      <!-- Big Emoji Reaction -->
+      <div id="feedbackIconWrapper" class="w-20 h-20 mx-auto rounded-full flex items-center justify-center text-5xl shadow-md border-4 border-white animate-bounce-gentle">
+        <span id="feedbackEmoji">🎉</span>
+      </div>
+
+      <!-- Title / Headline -->
+      <div class="space-y-1">
+        <h3 id="feedbackTitle" class="text-xl sm:text-2xl font-black font-fredoka">
+          Yey kamu benar! ✨
+        </h3>
+        <p id="feedbackSubtitle" class="text-xs sm:text-sm text-gray-600 font-medium">
+          Keren banget, kamu emang perhatian!
+        </p>
+      </div>
+
+      <!-- Detail Box (If wrong, shows what was correct) -->
+      <div id="feedbackDetailBox" class="p-3.5 rounded-2xl text-xs sm:text-sm font-semibold">
+        <span id="feedbackDetailText">Pilihan kamu tepat sekali!</span>
+      </div>
+
+      <!-- Continue Button -->
+      <button id="feedbackNextBtn" class="w-full py-3.5 px-6 rounded-2xl text-white font-bold text-base shadow-md hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 font-fredoka">
+        <span id="feedbackNextText">Pertanyaan Selanjutnya</span>
+        <span>👉</span>
+      </button>
+    </div>
+  </div>
+
+  <footer class="fixed bottom-2 left-0 right-0 text-center text-[11px] text-pink-700/80 pointer-events-none font-medium">
+    Made with 💖 for Inas • Pastel Pink & Yellow Edition
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
