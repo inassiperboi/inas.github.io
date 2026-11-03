@@ -1,5 +1,5 @@
 /**
- * 🌸 Happy 3rd Anniversary, Inasku Sayang! 🐱💖
+ * 🌸 Happy 3rd Anniversary, Inas & Tito! 🐱💖
  * Interactive Love Letter, Cat Playground & Polaroid Memory Wall
  * 13 November 2026
  */
@@ -174,25 +174,25 @@ function initLoveButtons() {
   const loveDisplayCard = document.getElementById('loveDisplayCard');
   const loveDisplayText = document.getElementById('loveDisplayText');
 
-  // Cute romantic messages for Inas
-  const inasQuotes = [
-    "Inas itu cantiknya 24/7 tanpa henti! Sayang Inas banyak-banyak! 🐱💖",
-    "Tau gak? 3 tahun ini adalah 3 tahun paling bahagia dalam hidupku karena ada Inas! 🌸",
-    "Kalau disuruh mengulang waktu sejuta kali, aku tetep bakal selalu milih Inas! 💍✨",
-    "Senyum Inas itu obat paling ampuh buat segala capek dan bad mood! 🍓",
-    "Inas jangan lupa ya, di sini ada yang selalu bangga dan sayang banget sama kamu! 🐾",
-    "Makasih udah sabar, udah lucu, dan selalu bikin kangen tiap detik! 💕",
-    "Inas + Aku = Duo ter-gemas sedunia! Happy 3rd Anniversary sayang! 🥳",
-    "Semoga kita terus barengan ya Inas, sampai kakek nenek dan selamanya! 🏡✨",
-    "Peluk erat Inas dari jauh... Meowww sayang Inasku! 🐾💖"
+  // Cute romantic messages for Inas & Tito
+  const coupleQuotes = [
+    "Inas & Tito: 3 tahun penuh cinta, tawa lepas, dan cerita manis bersama! 🐱💖",
+    "Tiga tahun berjalan berdua, saling melengkapi, saling menguatkan, dan saling menjaga! 🌸",
+    "Inas & Tito itu duo ter-kompak dan paling menggemaskan di dunia! 💍✨",
+    "Setiap detik perjalanan kita berdua selalu berharga dan penuh rasa syukur! 🍓",
+    "Kita adalah rumah dan tempat pulang paling nyaman untuk satu sama lain! 🏡🐾",
+    "Semoga cinta Inas & Tito selalu mekar, hangat, dan bahagia selamanya! 💕",
+    "Tiga tahun yang luar biasa, dan kita siap untuk puluhan tahun indah berikutnya! 🥳✨",
+    "Happy 3rd Anniversary Inas & Tito! 13 November 2026! 🥂💖",
+    "Pelukan hangat untuk kita berdua... Meowww bahagia selalu Inas & Tito! 🐾🐱"
   ];
 
   let quoteIndex = 0;
 
   if (randomLoveBtn) {
     randomLoveBtn.addEventListener('click', () => {
-      quoteIndex = (quoteIndex + 1) % inasQuotes.length;
-      loveDisplayText.textContent = inasQuotes[quoteIndex];
+      quoteIndex = (quoteIndex + 1) % coupleQuotes.length;
+      loveDisplayText.textContent = coupleQuotes[quoteIndex];
       loveDisplayCard.classList.remove('hidden');
       playSweetChime();
       showerMiniHearts();
@@ -202,7 +202,7 @@ function initLoveButtons() {
   if (catPurrBtn) {
     catPurrBtn.addEventListener('click', () => {
       playCatMeow();
-      loveDisplayText.textContent = "🐾 Meowww! Pelukan hangat & ciuman penuh sayang mendarat di pipi Inas! 🥰🐱";
+      loveDisplayText.textContent = "🐾 Meowww! Pelukan hangat & cinta manis untuk Inas & Tito! 🥰🐱✨";
       loveDisplayCard.classList.remove('hidden');
       showerHearts();
     });
@@ -220,9 +220,9 @@ function initLoveButtons() {
   if (whatsappAnnivBtn) {
     whatsappAnnivBtn.addEventListener('click', () => {
       const msg = encodeURIComponent(
-        "Happy 3rd Anniversary Inasku tersayang! 🐱💖\n" +
-        "Makasih banyak udah 3 tahun selalu ada, selalu bikin bahagia, dan jadi tempat pulang paling nyaman.\n" +
-        "I love you so much, now and forever! 🌸💍✨\n\n" +
+        "Happy 3rd Anniversary Inas & Tito! 🐱💖\n" +
+        "3 tahun penuh cinta, tawa, dan kebersamaan yang indah.\n" +
+        "Semoga kita berdua selalu bahagia, kompak, dan saling menjaga sampai selamanya! 🌸💍✨\n\n" +
         "Buka surat cinta kita di sini yuk: https://inassiperboi.github.io"
       );
       window.open(`https://api.whatsapp.com/send?text=${msg}`, '_blank');
